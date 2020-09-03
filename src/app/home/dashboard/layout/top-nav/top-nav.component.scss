@@ -1,0 +1,34 @@
+.scroll {
+    overflow: auto;
+    height: 300px;
+    width: 300px;
+    position: absolute;
+    will-change: transform;
+    top: 0px;
+    left: 0px;
+    transform: translate3d(-256px, 50px, 0px);
+  }
+  .nav-logo{
+    height: 40px;
+    margin: 5px 15px;
+  }
+  .nav-logo img{
+    height: 45px;
+  }
+  .media-object{
+    vertical-align: middle;
+      height: 20px;
+      margin-left:0%;
+  float:left; 
+  /* height:40px; */
+  
+  }
+  
+  ul input{
+    text-align: center;
+    color: blue;
+    align-content: center;
+    
+    margin-bottom:6px;
+    width: 280px;
+  }

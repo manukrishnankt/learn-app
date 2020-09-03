@@ -1,0 +1,23 @@
+<!-- <ng-container *ngFor="let item of routes" class="side-nav-width-fix">
+    <mat-card>
+        <a
+            mat-list-item
+            [routerLinkActive]="'active'"
+            [routerLink]=" ['/home', item.path]">
+              <i class={{item.data.icon}}></i> 
+              <span class="font">&nbsp;{{item.data.text}}</span>
+        </a>
+    </mat-card>
+</ng-container> -->
+
+
+<ul class="nav flex-column">
+    <ng-container *ngFor="let item of routes" class="side-nav-width-fix">
+        <li class="nav-item nav-item-setter">
+            <a mat-list-item [routerLinkActive]="'active'" [routerLink]=" ['/home', item.path]">
+                <i class={{item.data.icon}}></i>
+                <span class="font">&nbsp;{{item.data.text}}</span>
+            </a>
+        </li>
+    </ng-container>
+</ul>
