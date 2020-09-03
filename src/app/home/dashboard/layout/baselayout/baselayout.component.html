@@ -1,7 +1,13 @@
 <div id="page-container" class="">
     <app-top-nav></app-top-nav>
-    <app-side-nav></app-side-nav>
-    <div id="content" class="content">
-        <router-outlet></router-outlet>
+    <div class="container mat-card-parent" fxFlexFill>
+        <mat-card fxLayout="row" fxLayoutGap="30px" class="mat-crd-style" fxFlexFill>
+            <mat-card class="child-1" fxFlex="25">
+                <app-side-nav></app-side-nav>
+            </mat-card>
+            <mat-card class="child-2 mat-crd-router" fxFlex="75">
+                <router-outlet></router-outlet>
+            </mat-card>
+        </mat-card>
     </div>
 </div>
