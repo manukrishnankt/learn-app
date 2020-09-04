@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DemoMaterialModule } from '../util/shared/material.module';
 import { DashboardComponent } from './dashboard.component';
+import { CommonInjectableModule } from 'src/app/shared/common-injectable/common-injectable.module';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { DashboardComponent } from './dashboard.component';
   imports: [
     CommonModule,
     DashboardRoutingModule,
-    DemoMaterialModule
+    DemoMaterialModule,
+    CommonInjectableModule
   ]
 })
 export class DashboardModule { }

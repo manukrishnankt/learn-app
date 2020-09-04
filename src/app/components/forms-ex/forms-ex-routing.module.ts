@@ -1,16 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { WijmoLearnComponent } from './wijmo-learn.component';
+import { FormsExComponent } from './forms-ex.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    component : WijmoLearnComponent
-  }
+  { path : '', component : FormsExComponent}
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class WijmoLearnRoutingModule { }
+export class FormsExRoutingModule { }

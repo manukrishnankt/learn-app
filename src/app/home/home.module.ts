@@ -7,6 +7,7 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 
 import { HomeRoutingModule } from './home-routing.module';
 import { DemoMaterialModule } from './util/shared/material.module';
+import { CommonInjectableModule } from '../shared/common-injectable/common-injectable.module';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { DemoMaterialModule } from './util/shared/material.module';
     CommonModule,
     HomeRoutingModule,
     FlexLayoutModule,
-    DemoMaterialModule
+    DemoMaterialModule,
+    CommonInjectableModule
   ]
 })
 export class HomeModule { }

@@ -6,9 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-
+  mark : number = 12;
   constructor() { }
-
   ngOnInit(): void {
   }
 
