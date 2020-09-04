@@ -3,7 +3,7 @@ import { Resolve, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/r
 import { RouteService } from 'src/app/service/route.service';
 import { Observable } from 'rxjs';
 
-@Injectable({ providedIn: 'root' })
+@Injectable()
 export class RouteResolver implements Resolve<Observable<string>> {
     constructor(private service: RouteService) { }
 

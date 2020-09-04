@@ -14,7 +14,7 @@ export const childRoutes = [
     },
     {
       path: 'authguard',
-      canActivate: [AuthGuardService] ,
+      canActivate: [AuthGuardService] , //To Implement Role Based Authorization.
       loadChildren: () =>
         import('src/app/home').then(m => m.AuthGuardModule),
       data: { icon: 'fas fa-home fa-fw m-r-10 ', text: 'Auth Guard' }
