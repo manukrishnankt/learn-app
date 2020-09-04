@@ -4,7 +4,7 @@ import { RouteService } from 'src/app/service/route.service';
 import { Observable } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
-export class RouteResolver implements Resolve<any> {
+export class RouteResolver implements Resolve<Observable<string>> {
     constructor(private service: RouteService) { }
 
     resolve(
