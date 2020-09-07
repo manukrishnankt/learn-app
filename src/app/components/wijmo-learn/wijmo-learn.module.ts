@@ -9,8 +9,8 @@ import { WjGridGrouppanelModule } from '@grapecity/wijmo.angular2.grid.grouppane
 import { WjGridFilterModule } from '@grapecity/wijmo.angular2.grid.filter';
 import { WjGridSearchModule } from '@grapecity/wijmo.angular2.grid.search';
 import { WjInputModule } from '@grapecity/wijmo.angular2.input';
-import { ExportService } from 'src/app/service/export.service';
-import { DataService } from 'src/app/service/data.service';
+import { ExportService } from '../../service/export.service';
+import { DataService } from '../../service/data.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 

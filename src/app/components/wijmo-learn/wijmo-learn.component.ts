@@ -3,8 +3,8 @@ import '@grapecity/wijmo.touch';
 import * as wjcCore from '@grapecity/wijmo';
 import * as wjcGrid from '@grapecity/wijmo.grid';
 import { CellMaker, SparklineMarkers } from '@grapecity/wijmo.grid.cellmaker';
-import { KeyValue, Country, DataService } from 'src/app/service/data.service';
-import { IExcelExportContext, ExportService } from 'src/app/service/export.service';
+import { KeyValue, Country, DataService } from '../../service/data.service';
+import { IExcelExportContext, ExportService } from '../../service/export.service';
 
 @Component({
   selector: 'app-wijmo-learn',
@@ -12,7 +12,7 @@ import { IExcelExportContext, ExportService } from 'src/app/service/export.servi
   styleUrls: ['./wijmo-learn.component.scss']
 })
 export class WijmoLearnComponent implements OnDestroy {
-  private _itemsCount: number = 500;
+  private _itemsCount: number = 50;
   private _lastId: number = this._itemsCount;
   private _dataSvc: DataService;
   private _exportSvc: ExportService;
