@@ -1,6 +1,13 @@
-.bg{
-    margin-left: initial;
-    margin-right: initial;
-    margin-bottom: initial;
-    margin-top: initial;
+
+.example-card {
+    max-width: 400px;   
+}
+
+.example-header-image {
+    background-image: url('../../../assets/img/avatar.png');
+    background-size: cover;
+}
+.col-props{
+    margin-left: 5px;
+    margin-top: 15px;
 }

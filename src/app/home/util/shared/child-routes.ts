@@ -25,4 +25,16 @@ export const childRoutes = [
         import('src/app/home').then(m => m.FormsExModule),
       data: { icon: 'fas fa-home fa-fw m-r-10 ', text: 'Forms' }
     },
+    {
+      path: 'material',
+      loadChildren: () =>
+        import('src/app/home').then(m => m.MaterialExModule),
+      data: { icon: 'fas fa-home fa-fw m-r-10 ', text: 'Material' }
+    },
+    {
+      path: 'adv-search',
+      loadChildren: () =>
+        import('src/app/home').then(m => m.AdvancedSearchModule),
+      data: { icon: 'fas fa-home fa-fw m-r-10 ', text: 'Advanced Search' }
+    },
   ];

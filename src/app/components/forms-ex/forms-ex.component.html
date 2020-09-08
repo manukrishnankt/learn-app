@@ -1,1 +1,46 @@
-<p>forms-ex works!</p>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <!-- <div formArrayName="cities">
+        <div *ngFor="let city of cities.controls; index as i">
+            <input [formControlName]="i" placeholder="City">
+        </div>
+    </div> -->
+    <div class="row">
+        <div class="col-md-4">
+            <mat-form-field appearance="fill">
+                <mat-label>Select Cities</mat-label>
+                <mat-select formControlName="city">
+                    <div *ngFor="let ci of cityList; index as i">
+                        <mat-option [value]="ci">{{ ci }}</mat-option>
+                    </div>
+                </mat-select>
+                <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
+            </mat-form-field>
+        </div>
+        <div class="col-md-4">
+            <mat-form-field appearance="fill">
+                <mat-label>Select Condition</mat-label>
+                <mat-select formControlName="condition">
+                    <div *ngFor="let cl of conditionList; index as i">
+                        <mat-option [value]="cl">{{ cl }}</mat-option>
+                    </div>
+                </mat-select>
+                <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
+            </mat-form-field>
+        </div>
+        <div class="col-md-4">
+            <mat-form-field appearance="fill">
+                <mat-label>Select Cities</mat-label>
+                <mat-select formControlName="city2">
+                    <div *ngFor="let ci of cityList; index as i">
+                        <mat-option [value]="ci">{{ ci }}</mat-option>
+                    </div>
+                </mat-select>
+                <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
+            </mat-form-field><br>
+        </div>
+    </div>
+    <button>Submit</button>
+</form>
+<!-- 
+<button (click)="addCity()">Add City</button>
+<button (click)="setPreset()">Set preset</button> -->
