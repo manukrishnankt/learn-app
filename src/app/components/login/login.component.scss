@@ -1,12 +1,22 @@
-
-.mat-card-custom{
-    max-width: min-content;
-}
-.mat-card-parent{
-    margin: auto;
-    margin-top: 15%;
-}
-.column-setter{
-    margin: auto;
-    min-width: min-content;
-}
+html, body {
+    height: 100%;
+    width: 100%;
+  }
+.container {
+    height: 100%;
+    width: 100%;
+    background-image: url('../../../assets/img/lg-bg.jpg');
+    position: relative;
+  }
+  
+  .center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+  .row-setter{
+    padding: 25px;
+  }

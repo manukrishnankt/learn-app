@@ -1,8 +1,9 @@
-<div id="page-container" class="bg">
-    <div class="container mat-card-parent" >
-        <mat-card fxLayout="row"  class="">
-            <mat-card class="mat-crd-router column-setter">
-                <form [formGroup]="form" (ngSubmit)="onSubmit()" class="">
+<!--  -->
+<div class="container">
+    <div class="center">
+        <div class=" column-setter border">
+            <div class="row-setter">
+                <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form-position">
 
                     <div class="row">
                         <div class="col-md-12 ">
@@ -22,12 +23,12 @@
                     </div>
 
                     <div class="row">
-                            <div class="col-md-4 ">
-                                <button mat-raised-button class="" color="primary">Submit</button>
-                            </div>
+                        <div class="col-md-4 ">
+                            <button mat-raised-button class="" color="primary">Submit</button>
                         </div>
+                    </div>
                 </form>
-            </mat-card>
-        </mat-card>
+            </div>
+        </div>
     </div>
 </div>
