@@ -4,9 +4,10 @@ html, body {
   }
 .container {
     height: 100%;
-    width: 100%;
+    min-width: 100%;
     background-image: url('../../../assets/img/lg-bg.jpg');
-    position: relative;
+    background-color: chocolate;
+    // position: relative;
   }
   
   .center {
