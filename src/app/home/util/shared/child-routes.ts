@@ -37,4 +37,16 @@ export const childRoutes = [
         import('src/app/home').then(m => m.AdvancedSearchModule),
       data: { icon: 'fas fa-home fa-fw m-r-10 ', text: 'Advanced Search' }
     },
+    {
+      path: 'attr-directive',
+      loadChildren: () =>
+        import('src/app/home').then(m => m.AttrDirectiveModule),
+      data: { icon: 'fas fa-home fa-fw m-r-10 ', text: 'Attribute Directive' }
+    },
+    {
+      path: 'dynamic-component',
+      loadChildren: () =>
+        import('src/app/home').then(m => m.DynamicComponentModule),
+      data: { icon: 'fas fa-home fa-fw m-r-10 ', text: 'Dynamic Component' }
+    },
   ];
