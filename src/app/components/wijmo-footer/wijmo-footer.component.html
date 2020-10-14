@@ -1,0 +1,32 @@
+<div class="container-fluid">
+    <p [innerHTML]="selectedItem"></p>
+    <!-- the grid -->
+    <wj-flex-grid #flex
+        [itemsSource]="data" 
+        (initialized)="flexInitialized(flex)">
+        <wj-flex-grid-column [header]="'Country'" [binding]="'country'" width="2*">
+            <ng-template wjFlexGridCellTemplate [cellType]="'Cell'" let-cell="cell">
+                {{ cell.item.country }}
+              </ng-template>
+              <ng-template wjFlexGridCellTemplate [cellType]="'ColumnFooter'" let-cell="cell">
+                Footer
+              </ng-template>
+        </wj-flex-grid-column>
+        <wj-flex-grid-column [header]="'Sales'" [binding]="'sales'" width="*" format="n2">
+            <ng-template wjFlexGridCellTemplate [cellType]="'Cell'" let-cell="cell">
+                {{ cell.item.sales }}
+              </ng-template>
+              <ng-template wjFlexGridCellTemplate [cellType]="'ColumnFooter'" let-cell="cell">
+                Footer
+              </ng-template>
+        </wj-flex-grid-column>
+        <wj-flex-grid-column [header]="'Expenses'" [binding]="'expenses'" width="*" format="n2">
+            <ng-template wjFlexGridCellTemplate [cellType]="'Cell'" let-cell="cell">
+                {{ cell.item.expenses }}
+              </ng-template>
+              <ng-template wjFlexGridCellTemplate [cellType]="'ColumnFooter'" let-cell="cell">
+                Footer
+              </ng-template>
+        </wj-flex-grid-column>
+    </wj-flex-grid>
+</div>

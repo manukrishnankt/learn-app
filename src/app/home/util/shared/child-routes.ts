@@ -49,4 +49,10 @@ export const childRoutes = [
         import('src/app/home').then(m => m.DynamicComponentModule),
       data: { icon: 'fas fa-home fa-fw m-r-10 ', text: 'Dynamic Component' }
     },
+    {
+      path: 'wijmo-footer',
+      loadChildren: () =>
+        import('src/app/home').then(m => m.WijmoFooterModule),
+      data: { icon: 'fas fa-home fa-fw m-r-10 ', text: 'Wijmo Footer' }
+    },
   ];
