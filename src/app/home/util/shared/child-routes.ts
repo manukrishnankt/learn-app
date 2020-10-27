@@ -55,4 +55,10 @@ export const childRoutes = [
         import('src/app/home').then(m => m.WijmoFooterModule),
       data: { icon: 'fas fa-home fa-fw m-r-10 ', text: 'Wijmo Footer' }
     },
+    {
+      path: 'flex-layout',
+      loadChildren: () =>
+        import('src/app/home').then(m => m.FlexLayoutModule),
+      data: { icon: 'fas fa-home fa-fw m-r-10 ', text: 'Flex Layout' }
+    },
   ];

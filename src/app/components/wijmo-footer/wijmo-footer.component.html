@@ -30,3 +30,12 @@
         </wj-flex-grid-column>
     </wj-flex-grid>
 </div>
+<div class="container-fluid">
+  <div class="form-group">
+      <wj-flex-chart #flexC bindingX="country" [itemsSource]="datass" [palette]="palette" [tooltipContent]="tooltipContent" (initialized)="flexCInitialized(flex)">
+          <wj-flex-chart-legend position="Bottom"></wj-flex-chart-legend>
+          <wj-flex-chart-series binding="sales" name="Sales"></wj-flex-chart-series>
+          <wj-flex-chart-series binding="downloads" name="Downloads"></wj-flex-chart-series>
+      </wj-flex-chart>
+  </div>
+</div>

@@ -2,6 +2,8 @@ import { ViewChild } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import * as wjcCore from '@grapecity/wijmo';
 import * as wjcGrid from '@grapecity/wijmo.grid';
+import { DataService } from './data.service';
+import * as wjChart from '@grapecity/wijmo.chart';
 
 @Component({
   selector: 'app-wijmo-footer',
@@ -15,10 +17,15 @@ export class WijmoFooterComponent implements OnInit {
     
     // references FlexGrid named 'flex' in the view
     @ViewChild('flex') flex: wjcGrid.FlexGrid;
+    @ViewChild('flexC') flexC: wjChart.FlexChart;
+    datass: any[];
+    palette: any;
 
     // DataSvc will be passed by derived classes
-    constructor() {
+    constructor(private dataService: DataService) {
         this.data = this._getData();
+        this.datass = dataService.getData();
+        this.palette = this.getRandomPalette();
     }
   ngOnInit(): void {
   }
@@ -54,4 +61,21 @@ export class WijmoFooterComponent implements OnInit {
             this.flex.collectionView.currentItem);
     }
 
+    tooltipContent(hti: wjChart.HitTestInfo) {
+        let item = hti.item;
+        debugger;
+        return `<b>Country: </b>${item.country} <img src="resources/${item.country}.png" /></br>downloads: ${item.downloads}</br>sales: ${item.sales}`;
+    } 
+    //
+    getRandomPalette() {
+        let palettes = Object.getOwnPropertyNames(wjChart.Palettes)
+          .filter(prop => typeof wjChart.Palettes[prop] === "object" && prop !== 'prototype');
+        let rand = Math.floor(Math.random() * palettes.length);
+        //
+        return wjChart.Palettes[palettes[rand]];
+    }
+    flexCInitialized(flex){
+        console.log(this);
+        this.flexC.tooltip.position = 1;
+    }
 }
