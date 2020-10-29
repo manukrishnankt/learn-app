@@ -61,4 +61,10 @@ export const childRoutes = [
         import('src/app/home').then(m => m.FlexLayoutModule),
       data: { icon: 'fas fa-home fa-fw m-r-10 ', text: 'Flex Layout' }
     },
+    {
+      path: 'dynamic-callback',
+      loadChildren: () =>
+        import('src/app/home').then(m => m.DynamicCallbackModule),
+      data: { icon: 'fas fa-home fa-fw m-r-10 ', text: 'Dynamic Callback' }
+    },
   ];

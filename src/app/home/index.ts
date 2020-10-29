@@ -8,5 +8,6 @@ export * from '../components/attr-directive/attr-directive.module';
 export * from '../components/dynamic-component/dynamic-component.module';
 export * from '../components/wijmo-footer/wijmo-footer.module';
 export * from '../components/flex-layout/flex-layout.module';
+export * from '../components/dynamic-callback/dynamic-callback.module';
 
 
