@@ -8,7 +8,7 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
   styleUrls: ['./dynamic-callback.component.scss']
 })
 export class DynamicCallbackComponent implements OnInit, AfterViewInit {
-  intArr: Array<number> = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+  intArr: Array<number> = [1, 2, 3, 4, 5, 6];
   @ViewChild('dynamic') dynamic: ElementRef;
   constructor(private renderer: Renderer2) { }
   ngOnInit(): void {
@@ -18,6 +18,7 @@ export class DynamicCallbackComponent implements OnInit, AfterViewInit {
       const d2 = this.renderer.createElement('div');
       const text = this.renderer.createText(ite+'');
       this.renderer.addClass(d2, 'dynamic');
+      this.renderer.addClass(d2, 'col-md-2');
       this.renderer.listen(
         d2, 
         'click',
