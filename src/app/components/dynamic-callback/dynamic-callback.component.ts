@@ -10,8 +10,6 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
 export class DynamicCallbackComponent implements OnInit, AfterViewInit {
   intArr: Array<number> = [1, 2, 3, 4, 5, 6, 7, 8, 9];
   @ViewChild('dynamic') dynamic: ElementRef;
-  htmlToAdd: any;
-  htmlString: string;
   constructor(private renderer: Renderer2) { }
   ngOnInit(): void {
   }
@@ -19,6 +17,7 @@ export class DynamicCallbackComponent implements OnInit, AfterViewInit {
     this.intArr.forEach(ite =>{
       const d2 = this.renderer.createElement('div');
       const text = this.renderer.createText(ite+'');
+      this.renderer.addClass(d2, 'dynamic');
       this.renderer.listen(
         d2, 
         'click',
