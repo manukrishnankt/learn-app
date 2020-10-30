@@ -13,13 +13,24 @@ export class FormsExComponent implements OnInit {
   form = new FormGroup({
     city: new FormControl(''),
     condition: new FormControl(''),
-    city2: new FormControl('')
+    city2: new FormControl(''),
+    city3: new FormControl('')
   });
 
+  form1 = new FormGroup({
+    city1: new FormControl(''),
+  });
+  seconformVisibleYN: boolean = false;
   ngOnInit(): void {
   }
 
   onSubmit(){
     console.log(this.form.value);
+  }
+  onSubmit1(){
+    console.log(this.form.value);
+  }
+  visiblity(){
+    this.seconformVisibleYN = !this.seconformVisibleYN;
   }
 }

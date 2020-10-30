@@ -39,8 +39,45 @@
             </mat-form-field><br>
         </div>
     </div>
-    <button>Submit</button>
+    
+    <button >Submit</button>
+    <button type="button" (click)="visiblity()">Show Extra From Control</button>
 </form>
+<form [formGroup]="form1" (ngSubmit)="onSubmit1()">
+    <div class="row">
+        <div class="col-md-4">
+            <mat-form-field appearance="fill">
+                <mat-label>Select Cities</mat-label>
+                <mat-select formControlName="city1">
+                    <div *ngFor="let ci of cityList; index as i">
+                        <mat-option [value]="ci">{{ ci }}</mat-option>
+                    </div>
+                </mat-select>
+                <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
+            </mat-form-field>
+        </div>
+    </div>
+</form>
+<div *ngIf="seconformVisibleYN">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="row">
+            <div class="col-md-4">
+                <mat-form-field appearance="fill">
+                    <mat-label>Select Cities</mat-label>
+                    <mat-select formControlName="city3">
+                        <div *ngFor="let ci of cityList; index as i">
+                            <mat-option [value]="ci">{{ ci }}</mat-option>
+                        </div>
+                    </mat-select>
+                    <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
+                </mat-form-field>
+            </div>
+        </div>
+        
+        <button >Submit</button>
+    </form>
+</div>
+
 <!-- 
 <button (click)="addCity()">Add City</button>
 <button (click)="setPreset()">Set preset</button> -->
