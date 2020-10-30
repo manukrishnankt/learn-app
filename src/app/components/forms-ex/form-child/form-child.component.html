@@ -1,0 +1,16 @@
+<form [formGroup]="form"  class="selectorComponent"  >
+    <div class="row">
+        <div class="col-md-4">
+            <mat-form-field appearance="fill">
+                <mat-label>Select Cities</mat-label>
+                <mat-select formControlName="city4">
+                    <div *ngFor="let ci of cityList; index as i">
+                        <mat-option [value]="ci">{{ ci }}</mat-option>
+                    </div>
+                </mat-select>
+                <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
+            </mat-form-field>
+        </div>
+    </div>
+    <button (click)="onSubmit()" >Submit</button>
+</form>

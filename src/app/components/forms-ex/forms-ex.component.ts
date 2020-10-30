@@ -14,7 +14,8 @@ export class FormsExComponent implements OnInit {
     city: new FormControl(''),
     condition: new FormControl(''),
     city2: new FormControl(''),
-    city3: new FormControl('')
+    city3: new FormControl(''),
+    city4: new FormControl('')
   });
 
   form1 = new FormGroup({
