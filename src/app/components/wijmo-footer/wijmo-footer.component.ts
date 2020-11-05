@@ -4,6 +4,7 @@ import * as wjcCore from '@grapecity/wijmo';
 import * as wjcGrid from '@grapecity/wijmo.grid';
 import { DataService } from './data.service';
 import * as wjChart from '@grapecity/wijmo.chart';
+import { MatMenuTrigger } from '@angular/material/menu';
 
 @Component({
   selector: 'app-wijmo-footer',
@@ -12,7 +13,9 @@ import * as wjChart from '@grapecity/wijmo.chart';
 })
 export class WijmoFooterComponent implements OnInit {
 
-  data: any[];
+    data: any[];
+    filterColumns: Array<{itemName: string, itemList: Array<any>}>;
+    columnNames: any[] = [{Key:'Country', Val: 'country'}, {Key:'Sales', Val: 'sales'}, {Key:'Expenses', Val: 'expenses'}];
     selectedItem: string;
     
     // references FlexGrid named 'flex' in the view
@@ -28,6 +31,19 @@ export class WijmoFooterComponent implements OnInit {
         this.palette = this.getRandomPalette();
     }
   ngOnInit(): void {
+      this.filterColumns = new Array<{itemName: string, itemList: Array<any>}>();
+      this.columnNames.forEach(lis =>{
+        let distnctArr = Array.from(new Set(this.data.map((item: any) => item[lis.Val]))).map(lis =>{
+            return {items: lis, status: true};
+        });
+        let colName = lis.Key;
+        let item = {
+            itemName: colName,
+            itemList: distnctArr
+        };
+        this.filterColumns.push(item);
+      });
+      console.log(this.filterColumns);
   }
 
     flexInitialized(flexgrid: wjcGrid.FlexGrid) {
@@ -51,7 +67,12 @@ export class WijmoFooterComponent implements OnInit {
                 expenses: Math.random() * 5000
             });
         }
-
+        data.push({
+            id: countries.length,
+            country: countries[2],
+            sales: Math.random() * 10000,
+            expenses: Math.random() * 5000
+        });
         return data;
     }
 
@@ -78,4 +99,27 @@ export class WijmoFooterComponent implements OnInit {
         console.log(this);
         this.flexC.tooltip.position = 1;
     }
+
+    openContextMenu(
+        event: MouseEvent,
+        trigger: MatMenuTrigger,
+        triggerElement: HTMLElement
+      ) {
+        triggerElement.style.left = event.clientX + -25 + "px";
+        triggerElement.style.top = event.clientY + 5 + "px";
+        if (trigger.menuOpen) {
+          trigger.closeMenu();
+          trigger.openMenu();
+        } else {
+          trigger.openMenu();
+        }
+        event.preventDefault();
+      }
+      makeChange(item, cl, ct){
+        console.log(item.status);
+        item.status=!item.status;
+        let items : Array<{itemName: string, itemList: Array<any>}> ;
+        items = this.filterColumns.filter(lis=>lis.itemName === ct);
+        this.data = this._getData().filter(lis => items[0].itemList.filter(l => lis[items[0].itemName.toLowerCase()] === l.items)[0].status);
+      }
 }

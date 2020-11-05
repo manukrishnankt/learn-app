@@ -4,7 +4,18 @@
     <wj-flex-grid #flex
         [itemsSource]="data" 
         (initialized)="flexInitialized(flex)">
-        <wj-flex-grid-column [header]="'Country'" [binding]="'country'" width="2*">
+        <wj-flex-grid-column [header]="" [binding]="'country'" width="2*">
+          <ng-template wjFlexGridCellTemplate [cellType]="'ColumnHeader'" let-cell="cell">
+            
+            
+          <span style="position:fixed;" #spanTrigger class="context-menu-trigger" #matTrigger="matMenuTrigger" [matMenuTriggerFor]="contextMenu"></span>
+          <div (contextmenu)="openContextMenu($event, matTrigger, spanTrigger)"> {{ columnNames[0].Key }} </div>
+          <mat-menu #contextMenu="matMenu"> 
+              <div  *ngFor="let cl of filterColumns[0].itemList; index as i">
+                  <input type="checkbox" (click)="makeChange(cl, cl.items, columnNames[0].Key)" [(ngModel)]="cl.status">&nbsp; {{ cl.items }} <br/>
+              </div>
+          </mat-menu>
+          </ng-template>
             <ng-template wjFlexGridCellTemplate [cellType]="'Cell'" let-cell="cell">
                 {{ cell.item.country }}
               </ng-template>
