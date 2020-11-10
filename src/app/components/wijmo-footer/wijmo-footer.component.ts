@@ -51,7 +51,6 @@ export class WijmoFooterComponent implements OnInit {
         // sort the data by country
         let sd = new wjcCore.SortDescription('country', true);
         let sdc = new wjcCore.SortDescription('sales', true);
-        debugger;
         flexgrid.columnHeaders.rows.push(new wjcGrid.Row());
         flexgrid.collectionView.sortDescriptions.push(sd);
         flexgrid.columnFooters.rows.push(new wjcGrid.GroupRow());
@@ -88,7 +87,6 @@ export class WijmoFooterComponent implements OnInit {
 
     tooltipContent(hti: wjChart.HitTestInfo) {
         let item = hti.item;
-        debugger;
         return `<b>Country: </b>${item.country} <img src="resources/${item.country}.png" /></br>downloads: ${item.downloads}</br>sales: ${item.sales}`;
     } 
     //
@@ -130,7 +128,7 @@ export class WijmoFooterComponent implements OnInit {
         if(panel.cellType === 2 && r === 1){
           // cell.style.backgroundColor='blue';
           const d2 = this.renderer.createElement('input');
-          const text = this.renderer.createText('Foo');
+          // const text = this.renderer.createText('Foo');
           this.renderer.setProperty(d2 ,'ngModel', 'model.name');
           
           this.renderer.addClass(d2, 'dynamic');
@@ -142,7 +140,7 @@ export class WijmoFooterComponent implements OnInit {
               this.clickMe(evt.target.value);
             }
           );
-          this.renderer.appendChild(d2, text);
+          // this.renderer.appendChild(d2, text);
           cell.innerHTML = '<div></div>';
           this.renderer.appendChild(cell, d2);
         }
