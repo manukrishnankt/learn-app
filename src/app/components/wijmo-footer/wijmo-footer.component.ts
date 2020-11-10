@@ -1,4 +1,4 @@
-import { ViewChild } from '@angular/core';
+import { Renderer2, ViewChild } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import * as wjcCore from '@grapecity/wijmo';
 import * as wjcGrid from '@grapecity/wijmo.grid';
@@ -14,6 +14,7 @@ import { MatMenuTrigger } from '@angular/material/menu';
 export class WijmoFooterComponent implements OnInit {
 
     data: any[];
+    model: any= {};
     filterColumns: Array<{itemName: string, itemList: Array<any>}>;
     columnNames: any[] = [{Key:'Country', Val: 'country'}, {Key:'Sales', Val: 'sales'}, {Key:'Expenses', Val: 'expenses'}];
     selectedItem: string;
@@ -25,7 +26,7 @@ export class WijmoFooterComponent implements OnInit {
     palette: any;
 
     // DataSvc will be passed by derived classes
-    constructor(private dataService: DataService) {
+    constructor(private dataService: DataService, private renderer: Renderer2) {
         this.data = this._getData();
         this.datass = dataService.getData();
         this.palette = this.getRandomPalette();
@@ -49,6 +50,9 @@ export class WijmoFooterComponent implements OnInit {
     flexInitialized(flexgrid: wjcGrid.FlexGrid) {
         // sort the data by country
         let sd = new wjcCore.SortDescription('country', true);
+        let sdc = new wjcCore.SortDescription('sales', true);
+        debugger;
+        flexgrid.columnHeaders.rows.push(new wjcGrid.Row());
         flexgrid.collectionView.sortDescriptions.push(sd);
         flexgrid.columnFooters.rows.push(new wjcGrid.GroupRow());
         flexgrid.collectionView.currentChanged.addHandler(this._updateCurrentInfo.bind(this));
@@ -121,5 +125,29 @@ export class WijmoFooterComponent implements OnInit {
         let items : Array<{itemName: string, itemList: Array<any>}> ;
         items = this.filterColumns.filter(lis=>lis.itemName === ct);
         this.data = this._getData().filter(lis => items[0].itemList.filter(l => lis[items[0].itemName.toLowerCase()] === l.items)[0].status);
+      }
+      itemFormatter=(panel,r,c,cell)=>{
+        if(panel.cellType === 2 && r === 1){
+          // cell.style.backgroundColor='blue';
+          const d2 = this.renderer.createElement('input');
+          const text = this.renderer.createText('Foo');
+          this.renderer.setProperty(d2 ,'ngModel', 'model.name');
+          
+          this.renderer.addClass(d2, 'dynamic');
+          this.renderer.addClass(d2, 'col-md-4');
+          this.renderer.listen(
+            d2,
+            'input',
+            (evt) =>{
+              this.clickMe(evt.target.value);
+            }
+          );
+          this.renderer.appendChild(d2, text);
+          cell.innerHTML = '<div></div>';
+          this.renderer.appendChild(cell, d2);
+        }
+      }
+      clickMe(ite: any) {
+        console.log(ite);
       }
 }

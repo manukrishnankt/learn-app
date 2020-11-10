@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import {FormArray, FormControl, FormGroup} from '@angular/forms';
 
 @Component({
@@ -6,10 +6,13 @@ import {FormArray, FormControl, FormGroup} from '@angular/forms';
   templateUrl: './forms-ex.component.html',
   styleUrls: ['./forms-ex.component.scss']
 })
-export class FormsExComponent implements OnInit {
+export class FormsExComponent implements OnInit, AfterViewInit {
+  public dummyData: string = null;
   cityList : any[] =["Alaska", "Oman", "Delhi", "Kothamangalam" ];
   conditionList : any[] =["EQUALS", "NOT EQUALS", "GREATER THAN", "LESS THAN" ];
-
+  constructor(private cdr: ChangeDetectorRef){
+    this.dummyData = 'aswin';
+  }
   form = new FormGroup({
     city: new FormControl(''),
     condition: new FormControl(''),
@@ -23,6 +26,9 @@ export class FormsExComponent implements OnInit {
   });
   seconformVisibleYN: boolean = false;
   ngOnInit(): void {
+    this.form.patchValue({
+      city:'Oman'
+    });
   }
 
   onSubmit(){
@@ -33,5 +39,8 @@ export class FormsExComponent implements OnInit {
   }
   visiblity(){
     this.seconformVisibleYN = !this.seconformVisibleYN;
+  }
+  ngAfterViewInit(): void {
+    this.cdr.detectChanges();
   }
 }

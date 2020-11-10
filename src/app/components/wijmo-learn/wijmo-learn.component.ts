@@ -182,4 +182,10 @@ export class WijmoLearnComponent implements OnDestroy {
       this._lastId = this._itemsCount;
       this._itemsSource = this._createItemsSource();
   }
+  itemFormatter=(panel,r,c,cell)=>{
+    var rows=panel.rows[r];
+    if(rows.dataItem.active){
+       cell.style.backgroundColor='blue';
+    } 
+}
 }

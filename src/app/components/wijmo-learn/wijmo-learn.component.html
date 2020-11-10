@@ -39,7 +39,7 @@
   <!-- the grid -->
   <wj-flex-grid #flex [autoGenerateColumns]="false" [allowAddNew]="true" [allowDelete]="true"
       [allowPinning]="'SingleColumn'" [itemsSource]="itemsSource" [newRowAtTop]="true" [showMarquee]="true"
-      [selectionMode]="'MultiRange'" [validateEdits]="false">
+      [selectionMode]="'MultiRange'" [validateEdits]="false" [itemFormatter]="itemFormatter">
 
       <wj-flex-grid-filter
           [filterColumns]="['id', 'date', 'time', 'countryId', 'productId', 'colorId', 'price', 'change', 'discount', 'rating', 'active']">
