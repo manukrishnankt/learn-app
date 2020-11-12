@@ -1,9 +1,10 @@
-import { AfterViewInit, ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-form-child',
   templateUrl: './form-child.component.html',
-  styleUrls: ['./form-child.component.scss']
+  styleUrls: ['./form-child.component.scss'],
+  changeDetection: ChangeDetectionStrategy.Default
 })
 export class FormChildComponent implements OnInit, AfterViewInit {
   @Input('cityList') cityList : any;
@@ -18,7 +19,9 @@ export class FormChildComponent implements OnInit, AfterViewInit {
     this.onSubmitEmit.emit();
   }
   ngAfterViewInit(): void {
-    this.cdr.detectChanges();
-    console.log(this.dummyData);
+    setTimeout(() => {
+      this.cdr.detectChanges();
+      console.log(this.dummyData);
+    }, 1000);
   }
 }

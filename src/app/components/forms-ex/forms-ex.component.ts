@@ -1,17 +1,17 @@
-import { AfterViewInit, ChangeDetectorRef, Component, OnInit } from '@angular/core';
-import {FormArray, FormControl, FormGroup} from '@angular/forms';
+import { AfterViewInit, ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-forms-ex',
   templateUrl: './forms-ex.component.html',
-  styleUrls: ['./forms-ex.component.scss']
+  styleUrls: ['./forms-ex.component.scss'],
 })
 export class FormsExComponent implements OnInit, AfterViewInit {
-  public dummyData: string = null;
+  public dummyData: Array<string> = [];
   cityList : any[] =["Alaska", "Oman", "Delhi", "Kothamangalam" ];
   conditionList : any[] =["EQUALS", "NOT EQUALS", "GREATER THAN", "LESS THAN" ];
-  constructor(private cdr: ChangeDetectorRef){
-    this.dummyData = 'aswin';
+  constructor(){
+    
   }
   form = new FormGroup({
     city: new FormControl(''),
@@ -41,6 +41,6 @@ export class FormsExComponent implements OnInit, AfterViewInit {
     this.seconformVisibleYN = !this.seconformVisibleYN;
   }
   ngAfterViewInit(): void {
-    this.cdr.detectChanges();
+    this.dummyData = [...this.dummyData,'aswin'] ;
   }
 }
