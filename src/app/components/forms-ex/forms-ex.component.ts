@@ -41,6 +41,8 @@ export class FormsExComponent implements OnInit, AfterViewInit {
     this.seconformVisibleYN = !this.seconformVisibleYN;
   }
   ngAfterViewInit(): void {
-    this.dummyData = [...this.dummyData,'aswin'] ;
+    setTimeout(() => {
+      this.dummyData = [...this.dummyData,'aswin'] ;
+    });
   }
 }

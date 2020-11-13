@@ -15,13 +15,14 @@ export class FormChildComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
   }
-  onSubmit(){
+  onSubmit() {
     this.onSubmitEmit.emit();
   }
   ngAfterViewInit(): void {
+    console.log(this.dummyData);
     setTimeout(() => {
       this.cdr.detectChanges();
       console.log(this.dummyData);
-    }, 1000);
+    },1000);
   }
 }
