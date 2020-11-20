@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router, Route } from '@angular/router';
 
 @Component({
@@ -6,13 +6,7 @@ import { Router, Route } from '@angular/router';
   templateUrl: './baselayout.component.html',
   styleUrls: ['./baselayout.component.scss']
 })
-export class BaselayoutComponent implements OnInit {
+export class BaselayoutComponent {
 
   constructor(private router: Router) { }
-
-  ngOnInit() {
-  }
-  
-  
-
 }

@@ -18,9 +18,9 @@ export class MaterialExComponent implements OnInit {
     event: MouseEvent,
     trigger: MatMenuTrigger,
     triggerElement: HTMLElement
-  ) {
-    triggerElement.style.left = event.clientX + -25 + "px";
-    triggerElement.style.top = event.clientY + 5 + "px";
+  ): any {
+    triggerElement.style.left = event.clientX + -25 + 'px';
+    triggerElement.style.top = event.clientY + 5 + 'px';
     if (trigger.menuOpen) {
       trigger.closeMenu();
       trigger.openMenu();

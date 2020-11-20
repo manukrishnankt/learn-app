@@ -11,7 +11,7 @@ import { CustPercentagenPipe } from '../../pipes/cust-percentagen.pipe';
     CommonModule,
     CommonInjectableRoutingModule
   ],
-  exports:[
+  exports: [
     CustPercentagenPipe
   ]
 })

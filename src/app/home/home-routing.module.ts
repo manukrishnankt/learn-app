@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { BaselayoutComponent } from './dashboard/layout/baselayout/baselayout.component';
-import { childRoutes } from './util/shared/child-routes'
+import { childRoutes } from './util/shared/child-routes';
 
 const routes: Routes = [
   {

@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AttrDirectiveComponent } from './attr-directive.component';
+import { MatIconRegComponent } from './mat-icon-reg.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: AttrDirectiveComponent
+    component: MatIconRegComponent
   }
 ];
 
@@ -13,4 +13,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class AttrDirectiveRoutingModule { }
+export class MatIconRegRoutingModule { }
