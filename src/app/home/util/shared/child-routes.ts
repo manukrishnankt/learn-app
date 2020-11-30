@@ -72,4 +72,10 @@ export const childRoutes = [
       import('src/app/home').then(m => m.MatIconRegModule),
     data: { icon: 'fas fa-home fa-fw m-r-10 ', text: 'Mat Icon Registry' }
   },
+  {
+    path: 'multi-tabed',
+    loadChildren: () =>
+      import('src/app/home').then(m => m.MultiTabedModule),
+    data: { icon: 'fas fa-home fa-fw m-r-10 ', text: 'Multi Tab' }
+  },
 ];

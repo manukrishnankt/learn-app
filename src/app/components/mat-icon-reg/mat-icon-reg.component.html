@@ -2,7 +2,7 @@
     <mat-form-field class="example-full-width">
         <mat-label>Telephone</mat-label>
         <span matPrefix>+1 &nbsp;</span>
-        <input type="text" matInput placeholder="555-555-1234">
-        <mat-icon svgIcon="a" matSuffix></mat-icon>
+        <input type="text" matInput placeholder="555-555-1234" [(ngModel)]="matIconName" name="itemsCount">
+        <mat-icon svgIcon="{{ matIconName }}" matSuffix></mat-icon>
     </mat-form-field>
 </form>

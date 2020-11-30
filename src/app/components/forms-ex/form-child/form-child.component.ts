@@ -7,15 +7,15 @@ import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, E
   changeDetection: ChangeDetectionStrategy.Default
 })
 export class FormChildComponent implements OnInit, AfterViewInit {
-  @Input('cityList') cityList : any;
-  @Input('dummyData') dummyData : any;
-  @Input('form') form : any;
+  @Input('cityList') cityList: any;
+  @Input('dummyData') dummyData: any;
+  @Input('form') form: any;
   @Output() onSubmitEmit: EventEmitter<any> = new EventEmitter();
   constructor(private cdr: ChangeDetectorRef){}
 
   ngOnInit(): void {
   }
-  onSubmit() {
+  onSubmit(): any{
     this.onSubmitEmit.emit();
   }
   ngAfterViewInit(): void {
@@ -23,6 +23,6 @@ export class FormChildComponent implements OnInit, AfterViewInit {
     setTimeout(() => {
       this.cdr.detectChanges();
       console.log(this.dummyData);
-    },1000);
+    }, 1000);
   }
 }

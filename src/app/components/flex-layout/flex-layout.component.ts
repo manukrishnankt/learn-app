@@ -8,8 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class FlexLayoutComponent implements OnInit {
 
   constructor() { }
-
+  variableMe = 'MKSD';
   ngOnInit(): void {
+    this.variableMe = this.variableMe.substring(1, this.variableMe.length - 1);
   }
 
 }

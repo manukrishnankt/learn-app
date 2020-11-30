@@ -1,19 +1,25 @@
 <div class="container">
-    <div fxLayout="row" fxLayout.xs="column"  fxLayoutAlign="space-between center" >
+    <div fxLayout="row" class="parent-1" fxLayout.xs="column"  fxLayoutAlign="space-between center" >
+        <div class="child-1" fxFlex="50%">A</div>
+        <div class="child-2" fxFlex="50%">B</div>
+    </div>
+    <div fxLayout="row" class="parent-1" fxLayout.xs="column"  fxLayoutAlign="space-between center" >
         <div class="child-1">A</div>
         <div class="child-2">B</div>
     </div>
-    <div fxLayout="row" fxLayout.xs="column"  fxLayoutAlign="space-between center" >
+    <div fxLayout="row" class="parent-1" fxLayout.xs="column"  fxLayoutAlign="flex-end start" >
         <div class="child-1">A</div>
         <div class="child-2">B</div>
     </div>
-    <div fxLayout="row" fxLayout.xs="column"  fxLayoutAlign="flex-start" >
-        <div class="child-1">A</div>
-        <div class="child-2">B</div>
+    <div fxLayout="row" class="parent-1" fxLayout.xs="column"  fxLayoutAlign="justify-content: flex-start" fxLayoutGap="32px">
+        <div class="child-1" fxFlex="0 1 calc(50% - 32px)"   fxFlex.lt-md="0 1 calc(50% - 32px)" fxFlex.lt-sm="100%">A</div>
+        <div class="child-2" fxFlex="0 1 calc(50%)" fxFlex.lt-md="0 1 calc(50% - 32px)" fxFlex.lt-sm="100%">B</div>
+        
     </div>
-    <div fxLayout="row" fxLayout.xs="column"  fxLayoutAlign="justify-content: flex-start" fxLayoutGap="32px">
-        <div class="child-1" fxFlex="0 1 calc(33.3% - 32px)"   fxFlex.lt-md="0 1 calc(50% - 32px)" fxFlex.lt-sm="100%">A</div>
-        <div class="child-2" fxFlex="0 1 calc(33.3% - 32px)" fxFlex.lt-md="0 1 calc(50% - 32px)" fxFlex.lt-sm="100%">B</div>
+    <div fxLayout="row" class="parent-1" fxLayout.xs="column"  fxLayoutAlign="justify-content: flex-start" fxLayoutGap="32px">
+        <div class="child-1" fxFlex="100%"  >A</div>
+        <div class="child-2" fxFlex="100%">B</div>
         
     </div>
 </div>
+{{ variableMe }}

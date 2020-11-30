@@ -1,0 +1,5 @@
+<mat-tab-group mat-stretch-tabs class="example-stretched-tabs mat-elevation-z4">
+    <mat-tab label="First" > <app-template1 (tabEmitEvent)="onTabEvent()"></app-template1></mat-tab>
+    <mat-tab label="Second" [disabled]="tab2ActiveYN"> <app-template2></app-template2> </mat-tab>
+    <mat-tab label="Third" [disabled]="tab3ActiveYN"> <app-template3></app-template3> </mat-tab>
+</mat-tab-group>

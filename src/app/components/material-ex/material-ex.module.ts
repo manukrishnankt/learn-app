@@ -12,7 +12,6 @@ import { DemoMaterialModule } from 'src/app/home/util/shared/material.module';
     CommonModule,
     MaterialExRoutingModule,
     DemoMaterialModule,
-    
   ]
 })
 export class MaterialExModule { }

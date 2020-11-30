@@ -10,5 +10,6 @@ export * from '../components/wijmo-footer/wijmo-footer.module';
 export * from '../components/flex-layout/flex-layout.module';
 export * from '../components/dynamic-callback/dynamic-callback.module';
 export * from '../components/mat-icon-reg/mat-icon-reg.module';
+export * from '../components/multi-tabed/multi-tabed.module';
 
 
