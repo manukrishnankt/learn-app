@@ -1,0 +1,19 @@
+<div class="container-fluid">
+    <wj-flex-grid
+        #flexGridId
+        [alternatingRowStep]="0"
+        [showMarquee]="true"
+        [showSelectedHeaders]="'All'"
+        (mouseout)="mouseOutFunction($event)"
+        (mouseover)="mouseOverFunction($event)"
+        [selectionMode]="'MultiRange'"
+        [itemsSource]="data">
+        <wj-flex-grid-column binding="to" header="to" [width]="100"></wj-flex-grid-column>
+        <wj-flex-grid-column binding="expenses" header="expenses" [width]="100"></wj-flex-grid-column>
+        <wj-flex-grid-column binding="downloads" header="downloads" [width]="100"></wj-flex-grid-column>
+        <wj-flex-grid-column binding="sales" header="sales" [width]="100"></wj-flex-grid-column>
+        <wj-flex-grid-column binding="from" header="from" [width]="100"></wj-flex-grid-column>
+        <wj-flex-grid-column binding="act" header="ANY" [width]="100"></wj-flex-grid-column>
+    </wj-flex-grid>
+    
+</div>

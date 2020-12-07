@@ -78,4 +78,16 @@ export const childRoutes = [
       import('src/app/home').then(m => m.MultiTabedModule),
     data: { icon: 'fas fa-home fa-fw m-r-10 ', text: 'Multi Tab' }
   },
+  {
+    path: 'ace-editor',
+    loadChildren: () =>
+      import('src/app/home').then(m => m.EditorAceModule),
+    data: { icon: 'fas fa-home fa-fw m-r-10 ', text: 'ACE EDITORY' }
+  },
+  {
+    path: 'wijmo-extra',
+    loadChildren: () =>
+      import('src/app/home').then(m => m.WijmoModule),
+    data: { icon: 'fas fa-home fa-fw m-r-10 ', text: 'Wijmo' }
+  },
 ];

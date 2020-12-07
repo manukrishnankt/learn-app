@@ -4,8 +4,9 @@
     <wj-flex-grid #flex
         [itemsSource]="data" 
         [itemFormatter]="itemFormatter"
+        [showMarquee]="true"
         (initialized)="flexInitialized(flex)">
-        <wj-flex-grid-column  [binding]="'country'" width="2*">
+        <wj-flex-grid-column  [binding]="'country'" [width]="80" [minWidth]="40" [maxWidth]="160">
           <ng-template wjFlexGridCellTemplate [cellType]="'ColumnHeader'" let-cell="cell">
           
           <div class="container">
@@ -28,7 +29,7 @@
           
           </ng-template>
             <ng-template wjFlexGridCellTemplate [cellType]="'Cell'"  width="1*" let-cell="cell">
-                <div>{{ cell.item.country }}</div>
+                <div  [wjTooltip]="'This tooltip appears on the right of the button.'">{{ cell.item.country }}</div>
               </ng-template>
               <ng-template wjFlexGridCellTemplate [cellType]="'ColumnFooter'" let-cell="cell">
                 Footer

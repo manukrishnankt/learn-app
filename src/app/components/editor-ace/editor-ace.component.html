@@ -1,0 +1,11 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <ace-editor 
+  #aceEditor 
+  [theme]="'chrome'"
+  [readOnly]="false"
+  [autoUpdateContent]="true"
+  mode="xml" 
+  style=" min-height: 150px;" 
+  formControlName="aceeditor">
+</ace-editor>
+</form>
