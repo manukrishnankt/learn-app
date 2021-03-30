@@ -35,13 +35,13 @@
                 Footer
               </ng-template>
         </wj-flex-grid-column>
-        <wj-flex-grid-column [header]="'A'" [binding]="'sales'" width="1*" format="c2">
+        <wj-flex-grid-column [header]="'A'" [binding]="'sales'" width="1*" format="c2" >
           
           <ng-template wjFlexGridCellTemplate [cellType]="'ColumnHeader'" let-cell="cell">
             <div>{{"A"}}</div>
           </ng-template>
             <ng-template wjFlexGridCellTemplate [cellType]="'Cell'" let-cell="cell">
-                {{ cell.item.sales }}
+                <div matTooltip="asd">{{ cell.item.sales }} </div>>
               </ng-template>
               <ng-template wjFlexGridCellTemplate [cellType]="'ColumnFooter'" let-cell="cell">
                 Footer

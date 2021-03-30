@@ -15,12 +15,13 @@ export class WijmoComponent implements OnInit {
   }
   toolTip = new wjcCore.Tooltip();
   ngOnInit(): void {
+    // this.toolTip.cssClass = 'tooltipCustMK';
   }
   getData(): any[] {
     const countries = [
-        'United States of America',
+        "#elabel(doc,xpath,'AdditionalInterest_Interest_OtherIndicator_A1')=='1'",
         'Germany (Deutsches Bundesrepublik)',
-        'United Kingdom',
+        '/CommlPolicy/CommlPolicySupplement/ClaimsMadeInfo/UninterruptedClmMadeCovEntryDt',
         'Japan (Nippon)',
         'Italy (Il Bel Paese)',
         'Greece'
@@ -51,8 +52,9 @@ export class WijmoComponent implements OnInit {
     if (!ht.range.equals(rng)) {
         if (ht.cellType === wjcGrid.CellType.Cell) {
             rng = ht.range;
+            this.toolTip.isContentHtml = true;
             const data = this.flexGridId.getCellData(rng.row, rng.col, true);
-            const  tipContent = data;
+            const  tipContent ='<div class="temp-class">' + data + '</div>';
             const  cellElement = document.elementFromPoint(obj.clientX, obj.clientY);
             const cellBounds = wjcCore.Rect.fromBoundingRect(cellElement.getBoundingClientRect());
             this.toolTip.show(this.flexGridId.hostElement, tipContent, cellBounds);

@@ -62,13 +62,16 @@ export class WijmoFooterComponent implements OnInit {
         // create some random data
         let countries = 'US,Germany,UK,Japan,Italy,Greece'.split(','),
             data = [];
-        for (let i = 0; i < countries.length; i++) {
-            data.push({
-                id: i,
-                country: countries[i],
-                sales: Math.random() * 10000,
-                expenses: Math.random() * 5000
-            });
+        // for (let i = 0; i < countries.length; i++) {
+        //     data.push({
+        //         id: i,
+        //         country: countries[i],
+        //         sales: Math.random() * 10000,
+        //         expenses: Math.random() * 5000
+        //     });
+        // }
+        for(let i=0; i <100000; i++) {
+          this.populate(countries, data);
         }
         data.push({
             id: countries.length,
@@ -147,5 +150,15 @@ export class WijmoFooterComponent implements OnInit {
       }
       clickMe(ite: any) {
         console.log(ite);
+      }
+      populate(countries, data) {
+        for (let i = 0; i < countries.length; i++) {
+          data.push({
+              id: i,
+              country: countries[i],
+              sales: Math.random() * 10000,
+              expenses: Math.random() * 5000
+          });
+      }
       }
 }

@@ -90,4 +90,22 @@ export const childRoutes = [
       import('src/app/home').then(m => m.WijmoModule),
     data: { icon: 'fas fa-home fa-fw m-r-10 ', text: 'Wijmo' }
   },
+  {
+    path: 'matmenu',
+    loadChildren: () =>
+      import('src/app/home').then(m => m.MatmenuCustModule),
+    data: { icon: 'fas fa-home fa-fw m-r-10 ', text: 'Mat Menu' }
+  },
+  {
+    path: 'popper',
+    loadChildren: () =>
+      import('src/app/home').then(m => m.PopperjsexampleModule),
+    data: { icon: 'fas fa-home fa-fw m-r-10 ', text: 'Popper' }
+  },
+  {
+    path: 'mul_auto',
+    loadChildren: () =>
+      import('src/app/home').then(m => m.MultiAutoModule),
+    data: { icon: 'fas fa-home fa-fw m-r-10 ', text: 'Multi auto' }
+  },
 ];
